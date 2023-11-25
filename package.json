@@ -1,6 +1,7 @@
 {
   "name": "orders-products",
   "version": "0.1.0",
+  "homepage": " https://saftar94.github.io/orders-products/",
   "private": true,
   "dependencies": {
     "@babel/preset-env": "^7.22.1",
