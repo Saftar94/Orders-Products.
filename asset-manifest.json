@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/orders-products/static/js/main.82dbb083.js",
+    "static/media/myFoto.jpeg": "/orders-products/static/media/myFoto.a1c9d0e8ada6633cfaaa.jpeg",
+    "static/media/myFotox2.jpeg": "/orders-products/static/media/myFotox2.939f68d8cc43bddaf29b.jpeg",
+    "static/media/Monitor.jpeg": "/orders-products/static/media/Monitor.22b78a6437a199d3234a.jpeg",
+    "static/media/myFotox1.jpeg": "/orders-products/static/media/myFotox1.8975d5ae3737b7c7fd70.jpeg",
+    "index.html": "/orders-products/index.html",
+    "main.82dbb083.js.map": "/orders-products/static/js/main.82dbb083.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.82dbb083.js"
+  ]
+}
