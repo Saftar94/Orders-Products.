@@ -3,7 +3,6 @@ import { MenuPrishes, ArrowRight } from "../svg&image/svg/svgExport"
 import { FormatDate } from "../main/formatDate"
 import { useState } from "react"
 import { OrderGroup } from "./orderGroup"
-// import { Users } from "../users/users"
 import { orders } from "../shared/app"
 import {useSelector } from 'react-redux';
 
@@ -158,7 +157,6 @@ export const GroupProducts = ()=>{
       setActiveItem(null)
     };
     
-
 
     return(
       <GroupBlock >

@@ -59,20 +59,11 @@ z-index: 1000;
   flex-direction: initial;
   align-items: center;
   box-shadow: 0px -2px 2px -3px #000000;
-}
-}
-  justify-content: space-between;
   transition: transform 0.2s ease;
-  box-shadow: 3px -6px 5px -9px #000000;
-}
-list-style-type: none;
+
 &:last-child {
   margin-bottom: 0;
 }
-display: flex;
-flex-direction: initial;
-justify-content: space-between;
-transition: transform 0.2s ease;
 
 &:hover {
   transform: translateY(-5px);
@@ -86,12 +77,10 @@ color: #696767;
 font-size: 18px;
 text-align: justify;
 white-space: pre-line;
-
 text-decoration: underline;
 text-underline-position: under;
 text-decoration-color:  #c5c5c5;
 color: #696767;
-
 `
 const TotalProduc = styled.span`
 color: #696767;
@@ -126,7 +115,7 @@ background-color: #279227;
 padding: 30px 20px;
 `
 const CancelButton = styled.button`
-margin-right: 50px;
+margin-right: ${({ isCancel }) => (isCancel ? "50px" : "0")};
 display: flex;
 align-items: center;
 padding: 10px 20px;
@@ -136,11 +125,9 @@ background-color:  #279227;
 border-radius: 22px;
 cursor: pointer;
 &:hover {
- 
   color: #d9534f;
   background-color: #ffff;
   border-radius: 22px;
-
 }
 
 &:active {
@@ -183,7 +170,6 @@ export const Modal = ({ productId, onClose, onConfirmDelete }) => {
   const orderCounts = countProductsPerOrder(updatedItems, productsItems);
 
   const selectedPrishe = updatedItems.find(prishe => prishe.id === productId);
-console.log(selectedPrishe)
   return (
     <ModalBlock >
       <Modalcontent >
@@ -201,7 +187,6 @@ console.log(selectedPrishe)
             <p> {selectedPrishe.date}</p>
             </DateBlock>
           </ProductList>
-
         )}
         <ButtonBlock>
         <CancelButton onClick={onClose}>Отмена</CancelButton>

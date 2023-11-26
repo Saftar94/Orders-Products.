@@ -23,7 +23,7 @@ function FetchApi() {
   useEffect(() => {
     const KEY = `qcVwXNAjcIaQlfMmofYyStZVd43phJMqUnZ7G0P2VTg8z7ItSGmN96sQ`;
 
-    fetch("https://api.pexels.com/v1/search?query=cat", {
+    fetch("https://api.pexels.com/v1/search?query=computer", {
       headers: {
         Authorization: KEY,
       },
@@ -37,8 +37,8 @@ function FetchApi() {
 
   return (
     <Container>
-      <h1>Hello Groups Файл АПИ</h1>
       <div>
+        <h1>Hello Groups Файл АПИ</h1>
         {photos.map((photo) => (
           <img key={photo.id} src={photo.src.medium} alt={photo.photographer} />
         ))}

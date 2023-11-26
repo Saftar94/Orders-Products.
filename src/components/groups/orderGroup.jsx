@@ -1,13 +1,11 @@
-// import { products } from "../shared/app";
 import styled from "styled-components";
 import { Plus } from "../svg&image/svg/svgExport";
 import { ArrHeadSvg } from "../main/mainheader";
-import { Trash } from "../svg&image/svg/svgExport";
 import { useState } from "react";
 import { CloseSVG } from "../svg&image/svg/svgExport";
-import {useSelector, useDispatch } from 'react-redux';
-import { deleteProduct } from "../../redux/actions";
+import {useSelector } from 'react-redux';
 
+import { TrashButtonProduct } from "../Button/buttonTrashProduc";
 
 const GroupBlockRigth = styled.div`
 width: 100%;
@@ -97,9 +95,7 @@ font-size: 12px;
 `
 const Status = styled.p`
 `
-const ButtonTrash = styled.button`
-color: #696767;
-`
+
 
 const CloseIcon = styled.p`
     display: flex;
@@ -124,11 +120,8 @@ export const OrderGroup = ({order, onCloseRightBlock})=>{
   };
 
   const productsItems = useSelector((state) => state.productsItems);
-  const dispatch = useDispatch();
 
-  const handleRemoveTodo = (id) => {
-    dispatch(deleteProduct(id));
-  };
+
 
     return (
       <>
@@ -166,7 +159,8 @@ export const OrderGroup = ({order, onCloseRightBlock})=>{
                 <span style={{ color: "gray" }}>В ремонте</span>
               )}
               </Status>
-                          <ButtonTrash onClick={() => handleRemoveTodo(product.id)}><Trash/></ButtonTrash>
+                          <TrashButtonProduct itemId={product.id} />
+
 
                       </OrderList>
                   )

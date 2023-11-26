@@ -1,12 +1,12 @@
 import {  useEffect } from "react";
 import styled from "styled-components";
-import { Trash } from "../svg&image/svg/svgExport";
 import Container from "../constainer/constainer"
 import { MainHeader } from "../main/mainheader";
 import {useSelector, useDispatch } from 'react-redux';
-import {  calculateOrderSum,deleteProduct} from "../../redux/actions";
+import {  calculateOrderSum} from "../../redux/actions";
 import { FormatDate } from "../main/formatDate";
 import { useState } from "react";
+import { TrashButtonProduct } from "../Button/buttonTrashProduc";
 
 const OrderItems = styled.ul`
 list-style: none;
@@ -42,7 +42,7 @@ padding: 15px 15px;
   transform: translateY(-50%);
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  color: ${(props) => (props.isnew ? '#2acc2a' : '#808080')};
+  color: ${(props) => (props.$isnew ? '#2acc2a' : '#808080')};
 }
 
 &:hover {
@@ -73,9 +73,6 @@ const Status = styled.p`
 
 `
 
-const ButtonTrash = styled.button`
-color: #696767;
-`
 
 const StyledDollar = styled.span`
 color: #696767;
@@ -138,14 +135,6 @@ export const Products = () => {
     : productsItems;
 
   const dispatch = useDispatch();
-
-
-
-    
-  const handleRemoveTodo = (id) => {
-    dispatch(deleteProduct(id));
-  }
-
 
   useEffect(() => {
     updatedItems.forEach((order) => {
@@ -226,7 +215,8 @@ export const Products = () => {
               <FormDate>{FormatDate(product.date)}</FormDate>
               <ShortDate>{product.date}</ShortDate>
               </DateBlock>
-                          <ButtonTrash onClick={() => handleRemoveTodo(product.id)}><Trash/></ButtonTrash>
+                          <TrashButtonProduct itemId={product.id} />
+
                       </OrderList>
                   )
                 )}

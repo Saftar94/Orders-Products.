@@ -17,7 +17,6 @@ const HeaderText = styled.p`
 font-weight: 500;
 font-size: 20px;
 color:#4a4b4b;
-
 `
 export const MainHeader = ({ newTitle })=>{
   const updatedItems = useSelector((state) => state.updatedItems);
